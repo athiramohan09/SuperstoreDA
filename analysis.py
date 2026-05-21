@@ -83,6 +83,8 @@ print(df.groupby('State')['Profit'].sum().sort_values(ascending=False).head(10))
 
 
 # Visualizations
+
+# Sales by Category
 category_sales = df.groupby('Category')['Sales'].sum()
 
 plt.figure(figsize=(8, 5))
@@ -96,7 +98,7 @@ plt.tight_layout()
 plt.show()
 
 
-
+# Bottom 10 Sub-Categories by Sales
 sub_category_sales = (
     df.groupby('Sub-Category')['Sales']
     .sum()
@@ -116,7 +118,7 @@ plt.tight_layout()
 plt.show()
 
 
-
+# Profit by Category
 category_profit = df.groupby('Category')['Profit'].sum()
 
 plt.figure(figsize=(8, 5))
@@ -131,7 +133,7 @@ plt.show()
 
 
 
-
+# Monthly Sales Trend
 monthly_sales = df.groupby('Order Month')['Sales'].sum()
 
 plt.figure(figsize=(10, 5))
@@ -149,7 +151,7 @@ plt.show()
 
 
 
-
+# Region Wise Sales Distribution
 region_sales = df.groupby('Region')['Sales'].sum()
 
 plt.figure(figsize=(8, 5))
@@ -166,7 +168,7 @@ plt.show()
 
 
 
-
+# Top 10 States by Sales
 top_states = df.groupby('State')['Sales'].sum().sort_values(ascending=False).head(10)
 
 plt.figure(figsize=(12, 6))
@@ -183,7 +185,7 @@ plt.show()
 
 
 
-
+# Discount vs Profit
 plt.figure(figsize=(8, 5))
 plt.scatter(df['Discount'], df['Profit'])
 
@@ -197,7 +199,7 @@ plt.show()
 
 
 
-
+# Ship Mode Distribution
 ship_mode_counts = df['Ship Mode'].value_counts()
 
 plt.figure(figsize=(8, 5))
@@ -214,7 +216,7 @@ plt.show()
 
 
 
-
+# Top 10 Products by Sales
 top_products = df.groupby('Product Name')['Sales'].sum().sort_values(ascending=False).head(10)
 
 plt.figure(figsize=(12, 6))
@@ -229,7 +231,7 @@ plt.show()
 
 
 
-
+# Yearly Sales Trend
 yearly_sales = df.groupby('Order Year')['Sales'].sum()
 
 plt.figure(figsize=(8, 5))
@@ -246,7 +248,7 @@ plt.show()
 
 
 
-
+# Segment Wise Sales
 segment_sales = df.groupby('Segment')['Sales'].sum()
 
 plt.figure(figsize=(8, 5))
@@ -261,8 +263,8 @@ plt.show()
 
 
 
-
-print("\n================ IMPORTANT INSIGHTS ================\n")
+# Important Insights
+print("IMPORTANT INSIGHTS:")
 
 print("1. Highest sales category:")
 print(df.groupby('Category')['Sales'].sum().idxmax())
@@ -295,4 +297,4 @@ top_customers = (
 print("\n7. Top 20 Most Frequent Customers:")
 print(top_customers.to_string(index=False))
 
-print("\n================ ANALYSIS COMPLETED ================\n")
+print("ANALYSIS COMPLETED")

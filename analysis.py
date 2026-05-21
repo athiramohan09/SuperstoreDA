@@ -8,7 +8,7 @@ pd.set_option('display.width', 1000)
 # Replace with your CSV file name/path
 df = pd.read_csv("superstore.csv", encoding='latin1')
 
-print("\n================ DATASET LOADED ================\n")
+print("DATASET LOADED:")
 
 print("First 5 Rows:\n")
 print(df.head())
@@ -28,7 +28,7 @@ print(df.isnull().sum())
 print("\nStatistical Summary:\n")
 print(df.describe())
 
-print("\n================ DATA CLEANING ================\n")
+print("DATA CLEANING:")
 
 # Convert date columns to datetime
 df['Order Date'] = pd.to_datetime(df['Order Date'])
@@ -51,7 +51,7 @@ df['Order Month Name'] = df['Order Date'].dt.month_name()
 
 print("\nCleaned Dataset Shape:", df.shape)
 
-print("\n================ EXPLORATORY DATA ANALYSIS ================\n")
+print("EXPLORATORY DATA ANALYSIS:")
 
 # Total Sales
 total_sales = df['Sales'].sum()

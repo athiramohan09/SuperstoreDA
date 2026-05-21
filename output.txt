@@ -1,0 +1,207 @@
+================ DATASET LOADED ================
+
+First 5 Rows:
+
+   Row ID        Order ID  Order Date   Ship Date       Ship Mode Customer ID    Customer Name    Segment        Country             City       State  Postal Code Region       Product ID         Category Sub-Category                                       Product Name     Sales  Quantity  Discount    Profit
+0       1  CA-2016-152156   11/8/2016  11/11/2016    Second Class    CG-12520      Claire Gute   Consumer  United States        Henderson    Kentucky        42420  South  FUR-BO-10001798        Furniture    Bookcases                  Bush Somerset Collection Bookcase  261.9600         2      0.00   41.9136
+1       2  CA-2016-152156   11/8/2016  11/11/2016    Second Class    CG-12520      Claire Gute   Consumer  United States        Henderson    Kentucky        42420  South  FUR-CH-10000454        Furniture       Chairs  Hon Deluxe Fabric Upholstered Stacking Chairs,...  731.9400         3      0.00  219.5820
+2       3  CA-2016-138688   6/12/2016   6/16/2016    Second Class    DV-13045  Darrin Van Huff  Corporate  United States      Los Angeles  California        90036   West  OFF-LA-10000240  Office Supplies       Labels  Self-Adhesive Address Labels for Typewriters b...   14.6200         2      0.00    6.8714
+3       4  US-2015-108966  10/11/2015  10/18/2015  Standard Class    SO-20335   Sean O'Donnell   Consumer  United States  Fort Lauderdale     Florida        33311  South  FUR-TA-10000577        Furniture       Tables      Bretford CR4500 Series Slim Rectangular Table  957.5775         5      0.45 -383.0310
+4       5  US-2015-108966  10/11/2015  10/18/2015  Standard Class    SO-20335   Sean O'Donnell   Consumer  United States  Fort Lauderdale     Florida        33311  South  OFF-ST-10000760  Office Supplies      Storage                     Eldon Fold 'N Roll Cart System   22.3680         2      0.20    2.5164
+
+Dataset Shape:
+(9994, 21)
+
+Column Names:
+Index(['Row ID', 'Order ID', 'Order Date', 'Ship Date', 'Ship Mode', 'Customer ID', 'Customer Name', 'Segment', 'Country', 'City', 'State', 'Postal Code', 'Region', 'Product ID', 'Category', 'Sub-Category', 'Product Name', 'Sales', 'Quantity', 'Discount', 'Profit'], dtype='object')
+
+Data Types:
+
+Row ID             int64
+Order ID          object
+Order Date        object
+Ship Date         object
+Ship Mode         object
+Customer ID       object
+Customer Name     object
+Segment           object
+Country           object
+City              object
+State             object
+Postal Code        int64
+Region            object
+Product ID        object
+Category          object
+Sub-Category      object
+Product Name      object
+Sales            float64
+Quantity           int64
+Discount         float64
+Profit           float64
+dtype: object
+
+Missing Values:
+
+Row ID           0
+Order ID         0
+Order Date       0
+Ship Date        0
+Ship Mode        0
+Customer ID      0
+Customer Name    0
+Segment          0
+Country          0
+City             0
+State            0
+Postal Code      0
+Region           0
+Product ID       0
+Category         0
+Sub-Category     0
+Product Name     0
+Sales            0
+Quantity         0
+Discount         0
+Profit           0
+dtype: int64
+
+Statistical Summary:
+
+            Row ID   Postal Code         Sales     Quantity     Discount       Profit
+count  9994.000000   9994.000000   9994.000000  9994.000000  9994.000000  9994.000000
+mean   4997.500000  55190.379428    229.858001     3.789574     0.156203    28.656896
+std    2885.163629  32063.693350    623.245101     2.225110     0.206452   234.260108
+min       1.000000   1040.000000      0.444000     1.000000     0.000000 -6599.978000
+25%    2499.250000  23223.000000     17.280000     2.000000     0.000000     1.728750
+50%    4997.500000  56430.500000     54.490000     3.000000     0.200000     8.666500
+75%    7495.750000  90008.000000    209.940000     5.000000     0.200000    29.364000
+max    9994.000000  99301.000000  22638.480000    14.000000     0.800000  8399.976000
+
+================ DATA CLEANING ================
+
+Duplicate Rows: 0
+
+Missing Values After Cleaning:
+
+Row ID           0
+Order ID         0
+Order Date       0
+Ship Date        0
+Ship Mode        0
+Customer ID      0
+Customer Name    0
+Segment          0
+Country          0
+City             0
+State            0
+Postal Code      0
+Region           0
+Product ID       0
+Category         0
+Sub-Category     0
+Product Name     0
+Sales            0
+Quantity         0
+Discount         0
+Profit           0
+dtype: int64
+
+Cleaned Dataset Shape: (9994, 24)
+
+================ EXPLORATORY DATA ANALYSIS ================
+
+Total Sales: 2297200.8603000003
+Total Profit: 286397.0217
+Average Discount: 0.15620272163297977
+
+Sales by Category:
+
+Category
+Furniture          741999.7953
+Office Supplies    719047.0320
+Technology         836154.0330
+Name: Sales, dtype: float64
+
+Top 10 Sub-Categories by Sales:
+
+Sub-Category
+Phones         330007.0540
+Chairs         328449.1030
+Storage        223843.6080
+Tables         206965.5320
+Binders        203412.7330
+Machines       189238.6310
+Accessories    167380.3180
+Copiers        149528.0300
+Bookcases      114879.9963
+Appliances     107532.1610
+Name: Sales, dtype: float64
+
+Region Wise Sales:
+
+Region
+Central    501239.8908
+East       678781.2400
+South      391721.9050
+West       725457.8245
+Name: Sales, dtype: float64
+
+Top 10 States by Profit:
+
+State
+California    76381.3871
+New York      74038.5486
+Washington    33402.6517
+Michigan      24463.1876
+Virginia      18597.9504
+Indiana       18382.9363
+Georgia       16250.0433
+Kentucky      11199.6966
+Minnesota     10823.1874
+Delaware       9977.3748
+Name: Profit, dtype: float64
+
+================ IMPORTANT INSIGHTS ================
+
+1. Highest sales category:
+Technology
+
+2. Highest profit category:
+Technology
+
+3. Most profitable state:
+California
+
+4. Region with maximum sales:
+West
+
+5. Product with highest sales:
+Canon imageCLASS 2200 Advanced Copier
+
+6. Total Orders:
+5009
+
+7. Top 20 Most Frequent Customers:
+Customer ID      Customer Name     Segment             City          State  Region  Total Orders
+   SV-20365        Seth Vernon    Consumer    New York City       New York    East            14
+   SC-20770 Stewart Carmichael   Corporate     Philadelphia   Pennsylvania    East            12
+   AC-10615          Ann Chong   Corporate    New York City       New York    East            12
+   WB-21850      William Brown    Consumer          Anaheim     California    West            11
+   PP-18955         Paul Prost Home Office           Smyrna        Georgia   South            11
+   DK-13375        Dennis Kane    Consumer          Seattle     Washington    West            11
+   PF-19120       Peter Fuller    Consumer    New York City       New York    East            10
+   EH-13765       Edward Hooks   Corporate          Seattle     Washington    West            10
+   AP-10915     Arthur Prichep    Consumer      Los Angeles     California    West            10
+   NP-18325       Naresj Patel    Consumer    New York City       New York    East            10
+   RL-19615          Rob Lucas    Consumer          Chicago       Illinois Central            10
+   AG-10270    Alejandro Grove    Consumer            Omaha       Nebraska Central            10
+   CL-12565        Clay Ludtke    Consumer      Los Angeles     California    West            10
+   DB-13405      Denny Blanton    Consumer    New York City       New York    East             9
+   GB-14575  Giulietta Baptist    Consumer         Columbia South Carolina   South             9
+   GG-14650       Greg Guthrie   Corporate      Los Angeles     California    West             9
+   BT-11680     Brian Thompson    Consumer          Clinton       Maryland    East             9
+   KD-16495      Keith Dawkins   Corporate         San Jose     California    West             9
+   IM-15070       Irene Maddox    Consumer Colorado Springs       Colorado    West             9
+   PP-18955         Paul Prost Home Office      Springfield           Ohio    East             9
+
+================ ANALYSIS COMPLETED ================
